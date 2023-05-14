@@ -6,17 +6,17 @@ const error404 = document.querySelector('.not-found');
 
 search.addEventListener('click', () =>{
     
-    const APIKey = 'fb5fe0ce18d9292d1eff4319dc7afa17';
+    const APIKey = '728b0ee6df5687559812bd3169ad77b7';
     const city = document.querySelector('.search-box input').value;
 
-    if(city === '')
+    if (city === '')
     return;
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
     .then(response => response.json())
     .then(json => {
 
-        if(json.cod === '404'){
+        if (json.cod === '404') {
             container.style.height = '400px';
             weatherBox.style.display = 'none';
             weatherDetails.style.display= 'none';
